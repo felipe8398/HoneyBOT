@@ -1,8 +1,9 @@
+### CONTAINER BASEADO NO UBUNTU
 #############
 FROM ubuntu:22.04
 ############
 
-### INSTALA APACHE CURL PHP MODSEC ###
+### INSTALA NETCAT E O SYSTEMCTL E CRIAR ALGUMAS PASTAS NECESSARIAS
 ########################################
 RUN apt-get update && apt-get install -y netcat systemctl
 RUN mkdir -p /opt/honey && mkdir -p /opt/honey/logs && mkdir -p /opt/honey/banners
@@ -15,33 +16,35 @@ COPY banners/* /opt/honey/banners/
 COPY start.sh /opt/honey/
 #######################################
 
+### ADICIONA PERMISSAO AO SCRIPT
 #######################################
 RUN chmod +x /opt/honey/start.sh
 ########################################
 
+### TODO CONTAINER É EXECUTADO COM USUARIO ROOT (DESCULPA)
 ########################################
 USER root
 ########################################
 
+### DESCRIÇÃO DO HONEYBOT E SUA VERSÃO
 ########################################
-LABEL description="HoneyFodase"
+LABEL description="HoneyBOT"
 LABEL version="0.1"
 ########################################
 
-########################################
-#VOLUME /var/www/html/
-########################################
-
+### EXPOEM AS PORTAS DOS SERVICOS DO HONEYBOT
 ########################################
 EXPOSE 3306
 EXPOSE 23
 EXPOSE 21
 ########################################
 
+### PRINCIPAL SERVIÇO DO CONTAINER, SE ELE CAIR LASCOU
 ########################################
 ENTRYPOINT ["/opt/honey/start.sh"]
 ########################################
 
+### PERMITE QUE O SCRIPT ACIMA NÃO FINALIZE
 ########################################
 #CMD ["-D", "FOREGROUND"]
 CMD [ "sleep", "infinity" ]
