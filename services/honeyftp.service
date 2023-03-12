@@ -4,7 +4,7 @@ Description=Honey FTP
 [Service]
 User=root
 WorkingDirectory=/opt/honey
-ExecStart=/bin/bash -c 'while true; do nc -vnlp 21 < /opt/honey/banners/21.txt 1>> /opt/honey/logs/21.log 2>> /opt/honey/logs/21.log; echo $(date) >> /opt/honey/logs/21.log ; done'
+ExecStart=/bin/bash -c 'while true; do nc -vnlp 21 -w 5 < /opt/honey/banners/21.txt 1>> /opt/honey/logs/21.log 2>> /opt/honey/logs/21.log; echo $(date) >> /opt/honey/logs/21.log ; done'
 
 [Install]
 WantedBy=multi-user.target
