@@ -12,7 +12,7 @@
 - Ter instalado o Docker
 - Realizar o build da imagem, exemplo: docker image build -t honey:0.2 .
 - Subir o container, exemplo: docker container run -p 21:21 -p 23:23 -p 3306:3306 -d --mount type=bind,src=/opt/HoneyBOT/logs/,dst=/opt/honey/logs/ honey:0.2
-- Configurar as informaç
+- Configurar as informações de envio de email no DockerFile
 
 ### Quero adicionar um novo serviço para o Honeypot como fazer ? ###
 
