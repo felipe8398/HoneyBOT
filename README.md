@@ -12,8 +12,7 @@
 - Ter instalado o Docker
 - Realizar o build da imagem, exemplo: docker image build -t honey:0.2 .
 - Subir o container, exemplo: docker container run -p 21:21 -p 23:23 -p 3306:3306 -d --mount type=bind,src=/opt/HoneyBOT/logs/,dst=/opt/honey/logs/ honey:0.2
-- Instalar o mailx na máquina host
-- Criar crontab na máquina host com a seguinte configuração: 30 23 * * * /bin/bash /opt/HoneyBOT/logs/envia-email.sh >/dev/null 2>&1
+- Configurar as informaç
 
 ### Quero adicionar um novo serviço para o Honeypot como fazer ? ###
 
