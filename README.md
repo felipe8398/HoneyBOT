@@ -10,9 +10,8 @@
 
 - Realizar o famoso git clone https://github.com/felipe8398/HoneyBOT.git
 - Ter instalado o Docker
-- Realizar o build da imagem, exemplo: docker image build -t honey:0.2 .
-- Subir o container, exemplo: docker container run -p 21:21 -p 23:23 -p 3306:3306 -d --mount type=bind,src=/opt/HoneyBOT/logs/,dst=/opt/honey/logs/ honey:0.2
-- Configurar as informações de envio de email no DockerFile
+- Realizar o build da imagem, exemplo: docker image build -t honey:0.4 .
+- Subir o container, exemplo: docker container run -p 443:443 -p 80:80 -p 21:21 -p 23:23 -p 3306:3306 -d --mount type=bind,src=/opt/HoneyBOT/logs/,dst=/opt/honey/logs/ honey:0.4
 
 ### Quero adicionar um novo serviço para o Honeypot como fazer ? ###
 
