@@ -6,7 +6,7 @@
 
 ################################################
 
-cd /opt/HoneyBOT/logs/
+cd /opt/HoneyBOT/logs
 for line in $(strings -a *.log | grep received | awk -F " on " '{print $2}' | awk -F " " '{print $1}' | sort -n | uniq -c | sort -n | awk -F " " '{print $2}')
 do
 echo -n "$line;" && whois $line | grep @ | head -n1 | awk '{print $NF'} | sed "s/'//g"  | sed "s/(//g" | sed "s/)//g"

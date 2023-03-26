@@ -1,0 +1,10 @@
+[Unit]
+Description=Honey HTTP
+
+[Service]
+User=root
+WorkingDirectory=/opt/honey
+ExecStart=/bin/bash -c 'while true; do nc -vnlp 80 -w 15 < /opt/honey/banners/80.txt 1>> /opt/honey/logs/80.log 2>> /opt/honey/logs/80.log; echo $(date) >> /opt/honey/logs/80.log ; done'
+
+[Install]
+WantedBy=multi-user.target

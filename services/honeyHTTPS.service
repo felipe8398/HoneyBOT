@@ -1,0 +1,10 @@
+[Unit]
+Description=Honey HTTPS
+
+[Service]
+User=root
+WorkingDirectory=/opt/honey
+ExecStart=/bin/bash -c 'while true; do nc -vnlp 443 -w 15 < /opt/honey/banners/443.txt 1>> /opt/honey/logs/443.log 2>> /opt/honey/logs/443.log; echo $(date) >> /opt/honey/logs/443.log ; done'
+
+[Install]
+WantedBy=multi-user.target

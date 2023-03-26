@@ -37,6 +37,8 @@ LABEL version="0.3"
 EXPOSE 3306
 EXPOSE 23
 EXPOSE 21
+EXPOSE 80
+EXPOSE 443
 ########################################
 
 ### PRINCIPAL SERVIÇO DO CONTAINER, SE ELE CAIR LASCOU
