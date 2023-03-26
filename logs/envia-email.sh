@@ -35,5 +35,7 @@ done
 echo " " > /opt/HoneyBOT/logs/23.log
 echo " " > /opt/HoneyBOT/logs/21.log
 echo " " > /opt/HoneyBOT/logs/3306.log
+echo " " > /opt/HoneyBOT/logs/80.log
+echo " " > /opt/HoneyBOT/logs/443.log
 rm $(date +"%Y-%m-%d").diario
 
