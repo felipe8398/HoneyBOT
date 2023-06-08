@@ -3,7 +3,6 @@
 ## OBJETIVO: ##
 
 - Ter um Honeypot
-- Enviar notificação para as ASNs responsaveis por se conectar no Honeypot
 - Criar interface para compartilhamento dos logs para bloqueio dos IPs em servidores de produção
 
 ## Como subir o HoneyBOT ? ##
@@ -20,5 +19,7 @@
 - Criar o arquivo de log em /HoneyBOT/logs
 - Criar o bannher em /HoneyBOT/banners
 
-### Obs: Ainda está sendo feito: ###
-- Criar interface para compartilhamento dos logs para bloqueio dos IPs em servidores de produção
+### Como enviar os IOCs para o OTX AlienVault ? ###
+ - Abra o arquivo OTX.sh que está dentro de /logs
+ - Adicione sua API KEY do AlienVault e adicione seu PulseID
+ - Basta executar bash OTX.sh para executar o envio dos IOCs
